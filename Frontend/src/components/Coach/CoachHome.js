@@ -4,6 +4,7 @@ import React from 'react';
 import '../Mentor/Button.css'
 import '../Mentor/PageLayout.css'
 import '../Coach/CoachProfile'
+import '../Coach/CoachSeeStudentProfile'
 
 import { useNavigate } from "react-router-dom";
 
