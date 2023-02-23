@@ -28,6 +28,9 @@ function CoachHome() {
   function coachTableButton(){
     navigate('/coachtable', {replace: true})
   }
+  function coachSeeStudentProfile() {
+    navigate('/coachSeeStudentProfile', { replace: true })
+  }
 
   
 
@@ -57,6 +60,10 @@ return (
 
             <button onClick={coachTableButton}>
             Table of Mentors
+            </button>
+
+            <button onClick={coachSeeStudentProfile}>
+            Student Profile
             </button>
 
 

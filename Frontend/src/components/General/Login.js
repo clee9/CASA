@@ -67,7 +67,7 @@ function Login() {
                 if(userVal.usertype === "Coach"){
                     navigate('/teacher', {replace: true, state:userVal})                    
                 } 
-                if(userVal.usertype == "Admin"){
+                if(userVal.usertype === "Admin"){
                     navigate('/admin/homepage', {replace: true, state:userVal})
                 }
                 //navigate('/about', {replace: true, state:{userVal}})

@@ -27,6 +27,7 @@ import ViewTeams2 from '../components/Mentor/MentorViewTeams2';
 import CoachHome from "../components/Coach/CoachHome";
 import CoachTable from '../components/Coach/CoachTable';
 import CoachProfile from '../components/Coach/CoachProfile';
+import CoachSeeStudentProfile from '../components/Coach/CoachSeeStudentProfile';
 
 import Admin from '../components/Admin/Admin';
 
@@ -78,6 +79,7 @@ function App() {
           <Route path="coachhome" element={<CoachHome/>} />
           <Route path="profile" element={<CoachProfile/>} />
           <Route path="coachtable" element={<TableMentor/>} />
+          <Route path="coachseestudentprofile" element={<CoachSeeStudentProfile/>} />
           {/*ViewTeams 1 and 2 are functionally the same, they just display info in a different order*/}
           <Route path="ViewTeams" element={<ViewTeams/>} />
           <Route path="ViewTeams2" element={<ViewTeams2/>} />
