@@ -5,7 +5,7 @@ const { Quiz, TakenQuiz } = require('./Quiz')
 //https://mongoosejs.com/docs/discriminators.html
 //https://dev.to/helenasometimes/getting-started-with-mongoose-discriminators-in-expressjs--22m9
 
-const baseOptions = {
+const baseOptions = { 
     discriminatorKey: 'usertype',
     collection: 'users'
 };

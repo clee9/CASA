@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Frontend",
+    "\\Frontend\\src",
+    "\\Frontend\\src\\components",
+    "\\Frontend\\src\\components\\Coach",
+    "\\Frontend\\src\\components\\General",
     "\\Server"
   ],
-  "SelectedNode": "\\Server\\server.js",
   "PreviewInSolutionExplorer": false
 }

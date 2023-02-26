@@ -12,7 +12,7 @@ export default function CoachSeeStudentProfile() {
     let navigate = useNavigate();
 
     function homeButton() {
-        navigate('/teacher', { replace: true })
+        navigate('/coachhome', { replace: true })
     }
 
     const curruser = JSON.parse(localStorage.getItem("userID"));
@@ -21,8 +21,7 @@ export default function CoachSeeStudentProfile() {
     const coachID = fixeduser._id; 
 
     var postData;
-    var isclicked = "false"
-    const [data, setData] = useState("null");
+    const [data, setData] = useState(null);
     const [data1, setData1] = useState(null);
     const [data2, setData2] = useState(null);
     const [data3, setData3] = useState(null);
@@ -35,30 +34,29 @@ export default function CoachSeeStudentProfile() {
 
 
     const fetchUserAccount = (incText) => {
-        isclicked = "true";
-        postData = { displayname: incText }
+        postData = { displaynameID: incText }
         const requestOptions = {
             method: 'Post',
             headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(incText)
+            body: JSON.stringify(postData)
         };
         fetch('/api/coach/coachseestudentprofile', requestOptions).then(
             res => res.text()).then(text => {
                 try {
                     const userVal = JSON.parse(text);
-                    if (userVal.displayname !== JSON.stringify(incText)) {
-                        setErrorMessages({ name: "name", message: error.team })
-
-                    }
-                    else {
-                        console.log(userVal.incText)
-                        data(userVal.displayname);
-                        data1(userVal.school);
-                        setData2(userVal.tier);
-                        setData3(userVal.gradlevel);
-                        setData4(userVal.team);
-                    }
-
+                    console.log(userVal)
+                    const newlist = userVal[0]
+                    console.log(newlist)
+                    console.log(newlist.displayname )
+                        console.log(newlist.school)
+                        console.log(newlist.tier)
+                        console.log(newlist.gradelevel)
+                        console.log(newlist.team)
+                        setData(newlist.displayname);
+                        setData1(newlist.school);
+                        setData2(newlist.tier);
+                        setData3(newlist.gradelevel);
+                        setData4(newlist.team);
 
                 } catch (error) {
                     console.log("Unable to fetch -")
@@ -109,8 +107,7 @@ export default function CoachSeeStudentProfile() {
                 
                     <input value={input} placeholder="enter student display name" onChange={ev1 => setInput(ev1.target.value)}/>
                     <button onClick={() => fetchUserAccount(input)}>Get Student Profile</button>
-                        <p>isClicked: {isclicked}</p>
-                        <p>username: {data}</p>
+                        <p>Display Name: {data}</p>
                         <p>School: {data1}</p>
                         <p>Tier: {data2}</p>
                         <p>Gradlevel: {data3}</p>

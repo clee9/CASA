@@ -211,12 +211,22 @@ app.post('/api/coach/create_coach', async(req, res) => {
     })
   });
 
-    app.post('/api/coach/coachseestudentprofile', async(req, res) => {
+  app.post('/api/coach/coachseestudentprofile', async(req, res) => {
+      const { displaynameID } = req.body;
+      const user = await User.find({"displayname": displaynameID})     
+      if(!user){
+        return res.sendStatus(404)
+      } else {
+        return res.status(200).send(user); 
+      }      
+})
+
+
       //const studentobjid = Number(req.params.studid) //convert string from url to a number
     //mongoose.connection.db.collection('users').find({username: req.params.studentusername}).toArray().then(collection => {  
 
 
-      const { studentToSeeID } = req.body;
+  /*    const { studentToSeeID } = req.body;
       console.log(studentToSeeID)
       const studentToSee = await User.findOne({"displayname": studentToSeeID});
       console.log(studentToSee)
@@ -225,7 +235,7 @@ app.post('/api/coach/create_coach', async(req, res) => {
       } else {
         return res.status(200).send(studentToSee);
       }
-  });
+  });*/
 
 //=================
 
