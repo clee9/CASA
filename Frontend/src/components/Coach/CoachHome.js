@@ -23,7 +23,7 @@ function CoachHome() {
   
   //this doesn't work anymore since we removed the /teacher route
   function homeButton(){
-    navigate('/teacher', {replace: true})
+    navigate('/coachhome', {replace: true})
   }
   function coachTableButton(){
     navigate('/coachtable', {replace: true})
@@ -61,6 +61,8 @@ return (
             <button onClick={coachTableButton}>
             Table of Mentors
             </button>
+
+            <div></div>
 
             <button onClick={coachSeeStudentProfile}>
             Student Profile

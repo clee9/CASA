@@ -44,14 +44,7 @@ export default function CoachSeeStudentProfile() {
             res => res.text()).then(text => {
                 try {
                     const userVal = JSON.parse(text);
-                    console.log(userVal)
                     const newlist = userVal[0]
-                    console.log(newlist)
-                    console.log(newlist.displayname )
-                        console.log(newlist.school)
-                        console.log(newlist.tier)
-                        console.log(newlist.gradelevel)
-                        console.log(newlist.team)
                         setData(newlist.displayname);
                         setData1(newlist.school);
                         setData2(newlist.tier);
@@ -66,41 +59,7 @@ export default function CoachSeeStudentProfile() {
 
     };
 
-
-
-
-
-
-/*
-// need to figure out how to get student username
-    //const studentusername   = db.getUser({ usersInfo: { user: student, db: "users" } });    DOESN'T WORK
-
-
-    const studentsearchurl = '/api/studentsearch/';
-    //const finishedurl = studentsearchurl + studentusername;
-
-    //   const [currStud, setStud] = useState([])
-    const fetchUserAccount = (incText) => {
-        postData = { displayname: incText }
-
-        //useEffect(() => {
-        const finishedurl = studentsearchurl + incText;
-
-        var fieldData = ['username', 'school', 'tier', 'gradelevel', 'team'] //payload
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(fieldData)
-        };
-        fetch(finishedurl, requestOptions).then(res => res.json()).then(
-            data => {
-                setStud(data.collection)
-                console.log("Values in data collection:" + data.collection) // object Object
-                if (data.collection == null) { console.log(Error) }
-            })
-        
-*/
-            const [input, setInput] = useState('');
+        const [input, setInput] = useState('');
         
         return (
             <div className="App">
@@ -123,5 +82,3 @@ export default function CoachSeeStudentProfile() {
 
     
 }
-
-//export default CoachSeeStudentProfile;

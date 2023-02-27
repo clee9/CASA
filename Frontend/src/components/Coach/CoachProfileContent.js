@@ -1,6 +1,4 @@
 import React from 'react';
-//import { Text, View } from "react-native";
-//import { Text } from 'react-native';
 import "./stylesCoach.css"
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +7,7 @@ const ProfileContent = ({data}) => {
     let navigate = useNavigate();
 
     function homeButton(){
-        navigate('/teacher', {replace: true})  
+        navigate('/coachhome', {replace: true})  
     }
   
     return(
