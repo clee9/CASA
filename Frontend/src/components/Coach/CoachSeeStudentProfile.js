@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "./stylesCoach.css"
-import { useLocalStorage } from '../General/useLocalStorage'
 import { json } from "body-parser";
 import { useNavigate } from "react-router-dom";
 //import StudProfileContent from "./Student/StudProfileContent"
