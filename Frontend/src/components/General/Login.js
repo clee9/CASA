@@ -47,8 +47,18 @@ function Login() {
   const fetchUserAccount = (e, incText) => {
     e.preventDefault()
 
+    if(incText == "Password mismatch"){
+                setErrorMessages({name: "pass", message:error.pass}
+        }
+        if(incText == "Username not found"){
+                setErrorMessages({name: "user", message:error.user}
+        }
+        throw new Exception("Exception message");
+
+
     var postData = { id: JSON.parse(incText)._id}
-    const requestOptions = {
+	
+	const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(postData)
